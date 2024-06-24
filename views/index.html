@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/styles/styles.css">
+    <title>WatchList</title>
+</head>
+
+<body>
+    <header class="hero-section">
+        <div class="hero-text">
+            <h1 class="hero-text__title">Find your film</h1>
+            <a class="hero-text__link" href="watchlist.html">
+                <h2>Visit Watchlist</h2>
+            </a>
+        </div>
+    </header>
+
+    <div class="search-form__container">
+        <form class="search-form">
+            <input class="search-form__input" type="text" placeholder="Search for a movie...">
+            <button class="search-form__btn" type="button">Search</button>
+        </form>
+    </div>
+
+    <main class="movie-list">
+        <section class="movie-list__container">
+            <div class="movie">
+                <img class="movie-poster-img"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9lade51n35Gg_5nTbCxjncMjj6e0cQ8ofAA&s"
+                    alt="Movie poster">
+                <div class="movie-content">
+                    <div class="movie-info">
+                        <h3 class="movie-title">Blade Runner</h3>
+                        <div class="rate-container">
+                            <i class="fa fa-star gold-color" aria-hidden="true"></i>
+                            <p class="movie-rate">8.1</p>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <p class="movie-time">117min</p>
+                        <p class="movie-categorie">Action, Drama, Sci-fi</p>
+                        <div>
+                            <button class="add-to-watchlist">+</button>
+                            <label class="movie-categorie">Watchlist</>
+                        </div>
+                    </div>
+                    <p class="movie-discription">
+                        A blade runner must pursue and terminate four replicants who stole a ship in space, and have
+                        returned to Earth to find their creator.
+                    </p>
+                </div>
+            </div>
+            <hr style="width: 100%;" />
+        </section>
+    </main>
+    <script src="../main.js"></script>
+</body>
+
+</html>
