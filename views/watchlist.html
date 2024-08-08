@@ -3,13 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/styles.css">
-    <title>Document</title>
+    <title>WatchList</title>
 </head>
 
 <body>
-    whatlist
+    <header class="hero-section">
+        <div class="hero-text">
+            <h1 class="hero-text__title">My Watchlist</h1>
+            <a class="hero-text__link" href="index.html">
+                <h2>Search for movies</h2>
+            </a>
+        </div>
+    </header>
+
+    <main class="movie-list" id="movieList">
+        <div class="movie-container">
+            <h2 class="movie-empty">Your watchlist looking a bit empty...</h2>
+            <a href="index.html" class="add-movies">+ Let's add some movies!</a>
+        </div>
+    </main>
+    <script src="../main.js"></script>
 </body>
 
 </html>

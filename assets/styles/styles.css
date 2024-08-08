@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* ============= HERO SECTION ============= */
@@ -88,7 +89,7 @@ body {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  padding: 30px 30px 10px;
+  padding: 20px 20px 10px;
 }
 
 .movie-list__container {
@@ -96,23 +97,37 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .movie {
   display: flex;
   align-items: center;
   gap: 20px;
+  overflow: hidden;
 }
 
 .movie-poster-img {
-  width: 140px;
+  width: 120px;
   height: 90%;
 }
 
+.no-movie-img {
+  width: 160px;
+  margin: auto;
+  filter: opacity(0.3) drop-shadow(0 0 0 #dfdddd);
+}
+
+.movie-not-found-img {
+  width: 180px;
+  margin: auto;
+}
+
 .movie-content {
-  height: 180px;
   display: flex;
   gap: 20px;
+  flex: 1;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .rate-container {
@@ -129,7 +144,48 @@ body {
   display: flex;
   gap: 20px;
   align-items: center;
+  text-align: center;
   text-transform: capitalize;
+  overflow: hidden;
+}
+
+.add-to-watchlist {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-weight: bold;
+  background-color: rgb(166, 203, 245);
+}
+
+.movie-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  height: calc(1.2em * 3);
+  line-height: 1.2em;
+  max-height: calc(1.2em * 3);
+}
+
+.movie-container {
+  margin: auto;
+  text-align: center;
+}
+.movie-empty {
+  color: #dfdddd;
+}
+
+.add-movies {
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: rgb(166, 203, 245);
 }
 
 h3,
@@ -150,5 +206,20 @@ p {
   }
   .form-container {
     margin-top: -30px;
+  }
+
+  .movie-poster-img {
+    width: 140px;
+    height: 90%;
+  }
+
+  .no-movie-img {
+    width: 180px;
+    margin: auto;
+  }
+
+  .movie-not-found-img {
+    width: 200px;
+    margin: auto;
   }
 }
