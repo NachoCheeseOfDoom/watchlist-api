@@ -1,10 +1,12 @@
+import { getId } from "./watchList.js"
 
 const searchBtnEl = document.getElementById('searchBtn')
 const movieTitleEl = document.getElementById('movieTitle')
 const movieListEl = document.getElementById('movieList')
+const visitWatchlistEl = document.getElementById('visitWatchlist')
 
 const API_KEY = '19db8cf4'
-const url = `https://www.omdbapi.com/?apikey=${API_KEY}&`
+export const url = `https://www.omdbapi.com/?apikey=${API_KEY}&`
 
 
 document.addEventListener('keypress', (e) => {
@@ -14,8 +16,16 @@ document.addEventListener('keypress', (e) => {
     }
 })
 document.addEventListener('click', (e) => {
-    if (e.target.dataset.id) {
-        console.log(e.target.dataset.id)
+    let movieId = e.target.dataset.id
+    if (movieId) {
+        visitWatchlistEl.classList.add('movie-added-animation')
+        setTimeout(() => {
+            visitWatchlistEl.classList.remove('movie-added-animation')
+
+        }, 1000);
+
+
+        getId(movieId)
     }
 })
 searchBtnEl.addEventListener('click', async () => {
@@ -28,7 +38,7 @@ searchBtnEl.addEventListener('click', async () => {
         loadMovies(data.Search)
     } else {
         movieListEl.innerHTML = `
-         <div class="movie-container">
+        <div class="movie-container">
             <h2 class="movie-empty">No movie found</h2>
             <img class="movie-not-found-img" src="../assets/img/no-movie.svg" alt="No movies found">
         </div>
@@ -83,14 +93,3 @@ function loadMovies(movies = []) {
         movieListEl.innerHTML = html
     })
 }
-// async function searchMovie(movieTitle) {
-//     const res = await fetch(`${url}t=${movieTitle}`)
-//     const data = await res.json()
-//     if (!data.Error) {
-//         displayMovieDetails(data)
-//     } else {
-//         alert('Movie not found.')
-//     }
-
-//     console.log(data)
-// }
