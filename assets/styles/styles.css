@@ -47,16 +47,14 @@ body {
   color: var(--main-text-color);
   cursor: pointer;
   border-bottom: 3px solid var(--main-text-color);
-  margin-bottom: 0px;
-  /* border-radius: 3px; */
+  margin-bottom: 0px; 
   transition: 0.5s;
 }
 
 .movie-added-animation {
   padding: 1px;
   border-radius: 5px;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-  /* box-shadow: 0 0 100px var(--main-text-color); */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; 
 }
 
 /* ============= FORM SECTION ============= */

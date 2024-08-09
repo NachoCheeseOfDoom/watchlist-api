@@ -33,8 +33,7 @@ searchBtnEl.addEventListener('click', async () => {
     const res = await fetch(`${url}s=${title}`)
     const data = await res.json()
 
-    if (!data.Error) {
-        // displayMovieDetails(data)
+    if (!data.Error) { 
         loadMovies(data.Search)
     } else {
         movieListEl.innerHTML = `
