@@ -33,7 +33,7 @@ searchBtnEl.addEventListener('click', async () => {
     const res = await fetch(`${url}s=${title}`)
     const data = await res.json()
 
-    if (!data.Error) { 
+    if (!data.Error) {
         loadMovies(data.Search)
     } else {
         movieListEl.innerHTML = `
@@ -55,14 +55,15 @@ function loadMovies(movies = []) {
         const data = await res.json()
 
         const { Plot, Title, Runtime, Genre, Poster, Ratings } = data
-        const rating = Ratings[0].Value.split('/')[0]
+        const rating = Ratings && Ratings.length > 0 ? Ratings[0]['Value'].split('/')[0] : ['N/A']
+        const posterSrc = Poster !== "N/A" ? Poster : './assets/img/no-movie.svg';
 
 
         html += ` 
             <section class="movie-list__container">
                 <div class="movie">
                     <img class="movie-poster-img"
-                        src=${Poster}
+                        src=${posterSrc}
                         alt="Movie poster">
                     <div class="movie-content">
                         <div class="movie-info">
